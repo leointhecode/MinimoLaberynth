@@ -1,3 +1,15 @@
+# MazeCell Class
+
+La clase MazeCell representa una celda en un laberinto. Cada instancia de MazeCell tiene propiedades para gestionar las paredes y su estado de visita.
+
+## Propiedades
+
+### IsVisited (Propiedad Pública de Solo Lectura)
+Indica si la celda ha sido visitada o no.
+```csharp
+public bool IsVisited { get; private set; }
+```
+
 ## Métodos
 
 ### Visit
