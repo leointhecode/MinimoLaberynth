@@ -40,6 +40,7 @@ public void ClearBackWall()
 {
     _BackWall.SetActive(false);
 }
+```
 
 # MazeGenerator Class
 
