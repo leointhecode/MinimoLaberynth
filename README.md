@@ -2,54 +2,55 @@
  **Título del Juego: "MinimoLaberynth"**
 
 **Experiencia Deseada:**
-"MinimoLaberynth" busca transmitir una experiencia de relajación, diversión y desafío. El jugador se sumergirá en un mundo de laberintos generados de forma procedural, donde podrá perderse, explorar, y disfrutar de un ambiente que lo ayude a escapar del estrés diario. La meta principal es que los jugadores se relajen, mientras también disfrutan de un desafío entretenido.
+"MinimoLaberynth" busca ofrecer una experiencia única al combinar la generación procedural de laberintos con avanzadas técnicas de inteligencia artificial para la implementación de enemigos. El jugador se sumerge en un mundo de laberintos generados proceduralmente, donde puede perderse, explorar y disfrutar de un ambiente que ayuda a escapar del estrés diario. La meta principal es que los jugadores se relajen ganan puntos en un desafío entretenido.
 
 **Descripción General del Juego:**
-El juego "Laberinto de la Serenidad" es un juego de laberintos en 3D que utiliza la generación procedural para crear niveles únicos en cada partida. El entorno del juego tiene una estética relajante minimalista con colores solidos.
+"Laberinto de la Serenidad" es un juego de laberintos en 3D que utiliza la generación procedural para crear niveles únicos en cada partida en las que tendra que sumar puntos y evitar a los enemigos. El entorno del juego tiene una estética minimalista con colores sólidos, buscando transmitir una sensación de tranquilidad.
 
-**Lentesl:**
-1. **Lente de la Emoción:** El juego busca evocar emociones de relajación, asombro y satisfacción a medida que los jugadores resuelven los laberintos.
+**Lentes:**
 
-2. **Lente del Comportamiento:** Los jugadores deben demostrar habilidades de resolución de problemas, paciencia y exploración para superar los obstáculos del laberinto y avanzar.
+Lente de la Emoción: El juego busca evocar emociones de relajación, asombro y satisfacción a medida que los jugadores resuelven los laberintos. La presencia de enemigos agrega una capa de emoción al introducir elementos de sorpresa y estrategia, desafiando a los jugadores a mantener la calma en situaciones dinámicas.
 
-3. **Lente de la Estética:** El juego utiliza una estética visual y sonora que fomenta la relajación, con estilo minimalista y una música suave de fondo.
+Lente del Comportamiento: Los jugadores deben demostrar habilidades de resolución de problemas, paciencia y exploración para superar los obstáculos del laberinto y avanzar. La incorporación de enemigos introduce un componente estratégico, ya que los jugadores deben evitar ser capturados para mantener su calificación.
 
-4. **Lente del Espacio:** Cada laberinto se siente único y se adapta a la temática del entorno, creando un espacio atractivo para la exploración.
+Lente de la Estética: El juego utiliza una estética visual y sonora que fomenta la relajación, con un estilo minimalista y una música suave de fondo. A medida que los enemigos persiguen al jugador, la música podria intensificarse para mantener la coherencia estética y aumentar la emoción.
 
-**Objetivo del Juego:**
-El objetivo principal de " MinimoLaberynth"" es guiar al jugador a través de un laberinto generado proceduralmente hacia la salida, fomentando la relajación y la diversión. No hay límite de tiempo ni enemigos, lo que permite que los jugadores avancen a su propio ritmo.
+Lente del Espacio: Cada laberinto se siente único y se adapta a la temática del entorno, creando un espacio atractivo para la exploración. La presencia de enemigos contribuye a la dinámica del espacio, ya que los jugadores deben tener en cuenta la ubicación de los enemigos al planificar su ruta.
+
+Objetivo del Juego: La meta principal de "MinimoLaberynth" es guiar al jugador a través de un laberinto generado proceduralmente hacia 'puntos', fomentando la relajación y la diversión. deben evitar que los enemigos les roben puntos para mantener una puntuación alta.
 
 **Reglas:**
-1. Los jugadores deben navegar por el laberinto y encontrar la salida.
-2. No hay límite de tiempo ni vidas, por lo que los jugadores pueden explorar y disfrutar del juego sin presión.
-3. El juego recompensa la exploración y el descubrimiento con elementos visuales.
+
+Los jugadores deben navegar por el laberinto recogiendo la mayor cantidad de puntos posibles
+No hay límite de tiempo, permitiendo a los jugadores disfrutar del juego sin presión.
+Los enemigos pueden robar puntos al jugador si son capturados, incentivando a los jugadores a evitar encuentros directos y adoptar estrategias cautelosas.
 
 **Procedimientos:**
-- Los laberintos se generan proceduralmente en cada partida para garantizar la variedad.
-- Los jugadores pueden utilizar controles simples para mover el laberinto
-- El juego registra el tiempo que toma a los jugadores completar cada laberinto y les permite competir por tiempos más bajos.
+
+Los laberintos se generan proceduralmente en cada partida para garantizar la variedad, utilizando algoritmos avanzados que crean estructuras laberínticas complejas y desafiantes.
+Los jugadores pueden utilizar controles simples para moverse en el laberinto, interactuando con el entorno generado de manera dinámica.
+
+Tambien se utilizan tecnicas de busqueda de caminos para los enemigos con caracter de buscador y steering behaviors de patrullaje y persecucion a los enemigos cazadores.
+Finalmente se agrego una maquina de estado para que el comportamiento fuese variado.
 
 **Recursos:**
-- Gráficos de alta calidad para crear un entorno visualmente atractivo y relajante.
-- Música ambiental suave y efectos de sonido que complementan la estética del juego.
-- Controles intuitivos que permiten una experiencia de juego sin complicaciones.
+
+Gráficos de alta calidad para crear un entorno visualmente atractivo y relajante, con detalles generados proceduralmente para mantener la frescura en cada partida.
+Controles intuitivos que permiten una experiencia de juego sin complicaciones, permitiendo a los jugadores centrarse en la exploración y resolución de problemas.
 
 **Límites:**
-- No se permite la interacción violenta ni la competencia directa entre jugadores.
+No se permite la interacción violenta ni la competencia directa entre jugadores.
 
-**Conflicto:**
-El conflicto en el juego se centra en el desafío de navegar por los laberintos y superar obstáculos, pero no hay conflicto interpersonal ni violencia en el juego.
+**Implementación de Enemigos:**
 
-**Resultados o Desenlace:**
-El juego no tiene un desenlace específico, ya que los jugadores pueden seguir explorando y disfrutando de nuevos laberintos generados proceduralmente durante el tiempo que deseen. Los resultados se miden en términos de tiempo y eficiencia al completar los laberintos, lo que permite a los jugadores competir consigo mismos y con otros.
+Para intensificar la experiencia, se ha introducido un enemigo tipo "cazador" que utiliza un avanzado comportamiento de steering, combinando patrullaje y persecución. Este enemigo sigue estratégicamente al jugador, adaptándose a sus movimientos y creando un desafío dinámico.
 
-**Personajes:**
-Eventualmente se podrán modificar las texturas del personaje “bolita”
+Adicionalmente, se ha implementado un enemigo tipo "buscador" que utiliza técnicas de inteligencia artificial de búsqueda de caminos. Este enemigo planifica rutas eficientes para perseguir los puntos, añadiendo capas de complejidad a la exploración y aumentando la tensión.
 
-**Tecnica Elegida**
-El algoritmo comienza creando una cuadrícula de celdas no visitadas del laberinto, después se genera el laberinto a partir de la celda superior izquierda encontrando una celda vecina no visitada al azar y derribando la pared. El proceso continúa hasta que todas las celdas han sido visitadas exactamente una vez y el laberinto está terminado. El componente final de la celda del laberinto se añade a la escena, y el objeto celda del laberinto se crea con todos los componentes necesarios del objeto del juego, incluyendo un script para ayudar al algoritmo generador del laberinto a derribar paredes y crear el laberinto.
+Estas adiciones enriquecen la experiencia de "MinimoLaberynth", proporcionando desafíos emocionantes y estratégicos mientras se navega por los laberintos generados proceduralmente.
 
 **Algoritmo**
+Generacion procedural
 ```
 Función GenerateMaze(previousCell, currentCell)
     Marcar currentCell como visitada
@@ -94,6 +95,54 @@ Función Principal
         Crear una instancia de MazeCell en la posición correspondiente
 
     Llamar a GenerateMaze con la primera celda como currentCell
+
+
+```
+
+steering behavior y maquina de estado
+
+```
+
+    void Update()
+    {
+        PatrolAgent();
+        PursuePlayer();
+    }
+
+    void PursuePlayer()
+    {
+        calcula posicion del jugador
+        if (distanceToPlayer < pursuitRadius)
+        {
+            perseguir jugador;
+        }
+    }
+
+    void PatrolAgent()
+    {
+        if (jugador no esta en el pursuitradius) //done with path
+        {
+            Vector3 point;
+            dame un punto aleatorio en mi rango de patrullaje //pass in our centre point and radius of area
+            {
+               traza un rayo hacia el //so you can see with gizmos
+                ve al punto aleatorio
+            }
+        }
+
+    }
+
+```
+
+busqueda de caminos (se uso un navmesh)
+```
+
+void Update()
+    {
+
+        encuentra el punto a obtener;
+        dirigete al punto en el camino mas corto;
+    }
 
 
 ```
