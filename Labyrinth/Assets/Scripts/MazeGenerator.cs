@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Unity.AI.Navigation;
 
 public class MazeGenerator : MonoBehaviour
 {
@@ -14,31 +15,28 @@ public class MazeGenerator : MonoBehaviour
 
     private MazeCell[,] _mazeGrid;
 
-    private void Awake()
+    void Awake()
     {
         RenderSettings.fog = false; // Disable fog
-    }
 
-    IEnumerator Start()
-    {
         _mazeGrid = new MazeCell[_mazeWidth, _mazeDepth];
 
         for (int x = 0; x < _mazeWidth; x++)
         {
             for(int z = 0; z < _mazeDepth; z++)
             {
-                _mazeGrid[x,z] = Instantiate(_mazeCellPrefab, new Vector3(x, 0, z), Quaternion.identity);
+                _mazeGrid[x,z] = Instantiate(_mazeCellPrefab, new Vector3(x, 0, z), Quaternion.identity, transform);
+                _mazeGrid[x, z].transform.localPosition = new Vector3(x, 0, z);
             }
         }
-        yield return GenerateMaze(null, _mazeGrid[0, 0]);
+        GenerateMaze(null, _mazeGrid[0, 0]);
+        GetComponent<NavMeshSurface>().BuildNavMesh();
     }
 
-    private IEnumerator GenerateMaze(MazeCell previousCell, MazeCell currentCell)
+    private void GenerateMaze(MazeCell previousCell, MazeCell currentCell)
     {
         currentCell.Visit();
         ClearWalls(previousCell, currentCell);
-
-        yield return new WaitForSeconds(0.05f);
 
         MazeCell nextCell;
 
@@ -47,8 +45,8 @@ public class MazeGenerator : MonoBehaviour
             nextCell = GetNextUnvisitedCell(currentCell);
 
             if (nextCell != null)
-            {
-                yield return GenerateMaze(currentCell, nextCell);
+            {   
+                GenerateMaze(currentCell, nextCell);
             }
         } while (nextCell != null);
     }
@@ -63,8 +61,8 @@ public class MazeGenerator : MonoBehaviour
 
     private IEnumerable<MazeCell> GetUnvisitedCells(MazeCell currentCell)
     {
-        int x = (int)currentCell.transform.position.x;
-        int z = (int)currentCell.transform.position.z;
+        int x = (int)currentCell.transform.localPosition.x;
+        int z = (int)currentCell.transform.localPosition.z;
 
         if(x+1 < _mazeWidth)
         {
@@ -110,26 +108,26 @@ public class MazeGenerator : MonoBehaviour
         {
             return;
         }
-        if(previousCell.transform.position.x < currentCell.transform.position.x)
+        if(previousCell.transform.localPosition.x < currentCell.transform.localPosition.x)
         {
             previousCell.ClearRightWall();
             currentCell.ClearLeftWall();
             return;
         }
-        if (previousCell.transform.position.x > currentCell.transform.position.x)
+        if (previousCell.transform.localPosition.x > currentCell.transform.localPosition.x)
         {
             previousCell.ClearLeftWall();
             currentCell.ClearRightWall();
             return;
         }
 
-        if (previousCell.transform.position.z < currentCell.transform.position.z)
+        if (previousCell.transform.localPosition.z < currentCell.transform.localPosition.z)
         {
             previousCell.ClearFrontWall();
             currentCell.ClearBackWall();
             return;
         }
-        if (previousCell.transform.position.z > currentCell.transform.position.z)
+        if (previousCell.transform.localPosition.z > currentCell.transform.localPosition.z)
         {
             previousCell.ClearBackWall();
             currentCell.ClearFrontWall();
